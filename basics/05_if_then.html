@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+
+    <!-- Data Binding -->
+    <script src="https://cdn.jsdelivr.net/npm/vue" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" placeholder="Enter your name">
+
+        <!-- We can use the 'if' directive to conditionally show elements -->
+        <p class="error" v-if="showErrorMessage">
+            There was a problem try again...
+        </p>
+        <p class="success" v-else>
+            Succcess!
+        </p>
+    </div>
+
+    <script>
+        /**
+         * try changing the app.showErrorMessage property to true
+         * in your browser console, and see what happens.
+         */
+
+        let app;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            app = new Vue({
+                el: "#app",
+                data: {
+                    showErrorMessage: false,
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

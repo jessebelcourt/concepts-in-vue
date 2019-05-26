@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <!-- Data Binding -->
+    <script src="https://cdn.jsdelivr.net/npm/vue" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>
+            <!-- We can use a convenient shorthand to ommit for attribute data binding -->
+            <span :title="titleMessage">{{ message }}</span>
+        </h1>
+    </div>
+
+    <script>
+        let app;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            /**
+             * Our data is 'Reactive'. What does that mean?
+             * open up your console, and run:
+
+                app.message = 'A new message'
+
+             * Your interface should update automatically with the new message
+             */
+            app = new Vue({
+                el: "#app",
+                data: {
+                    message: 'Hover here',
+                    titleMessage: 'cool huh?',
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
